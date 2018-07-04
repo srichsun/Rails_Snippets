@@ -1,0 +1,32 @@
+<%= form_with(model: bitch, local: true) do |form| %>
+  <% if bitch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bitch.errors.count, "error") %> prohibited this bitch from being saved:</h2>
+
+      <ul>
+      <% bitch.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bio %>
+    <%= form.text_area :bio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthday %>
+    <%= form.text_field :birthday %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
