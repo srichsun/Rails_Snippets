@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+3.times do |i|
+  Country.create(name: "country #{i}", language: 'English')
+end
+
+5.times do |i|
+  Person.create(name: "person #{i}", gender: 'girl', color: 'black')
+end
+
+10.times do |i|
+  Bitch.create(name: "Bitch #{i}", bio: 'Hi I\'m a bitch')
+end
