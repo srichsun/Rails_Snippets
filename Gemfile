@@ -48,6 +48,20 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # console
+  gem 'awesome_print', '1.8.0'# beautiful rails console 還要在本機新增~/.irbrc 詳看readme
+
+  # log
+  gem 'meta_request', '0.6.0'
+
+  # debug
+  gem 'pry', '0.9.12.3'
+  gem 'better_errors' , '2.4.0'
+  gem 'binding_of_caller', '0.8.0' # enable enhanced featuers of better_errors
+
+  # database
+  gem 'rails_admin', '1.3.0'
+  gem 'rails-erd', '1.5.2', require: false
 end
 
 group :test do
