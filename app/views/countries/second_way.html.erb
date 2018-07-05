@@ -1,12 +1,33 @@
 <%= link_to "Get a boy by normal get, get html respond", get_a_boy_path, class: "btn btn-primary"  %>
-
-
 <%= link_to "Get a boy by UJS, to do get_a_boy.js.erb", get_a_boy_path, method: 'post', class: "btn btn-primary", remote: true  %> <br> <br>
 <div id="refreshing_boy"><h1>Taiwan boy</h1></div>
-<!-- 加remote:true就可以：點連結，吃get_a_boy.js.erb， -->
 <!--
+加remote:true就可以：點連結，吃get_a_boy.js.erb，
+button_to 也可以用remote: true，一樣的效果
+
 remote: true 做的事：
 就是綁定click，
 prevent default，
 對連結打ajax，收script
+-->
+
+<!--
+link_to vs button_to產生的HTML
+
+button_to:
+可以防止資料改變是被機器人驅動
+其實是就是有按鈕的form，預設POST，有authenticity_token
+
+<%= link_to "Get a boy by UJS, to do get_a_boy.js.erb", get_a_boy_path, method: 'post', class: "btn btn-primary", remote: true  %> <br> <br>
+
+<a href="/get_a_boy" data-remote="true" data-method="post" class="btn btn-primary" rel="nofollow">
+  Get a boy by UJS, to do get_a_boy.js.erb
+</a>
+
+<%= button_to "Get a boy by UJS, to do get_a_boy.js.erb", get_a_boy_path, method: 'post', class: "btn btn-primary", remote: true  %> <br> <br>
+
+<form action="/get_a_boy" data-remote="true" method="post" class="button_to">
+  <input class="btn btn-primary" type="submit" value="Get a boy by UJS, to do get_a_boy.js.erb">
+  <input type="hidden" name="authenticity_token" value="hdbogDBtPkcTfZFGhsAIQCKN0xFzfNTeK+S3GLoJ7iWOmc/iv/sgDlNAwdL97tvTQFqwrZytzhJ85qw90Uu6vA==">
+</form>
 -->
