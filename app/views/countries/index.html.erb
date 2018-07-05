@@ -1,26 +1,2 @@
-
-<%= link_to "Get a girl", "#", class: "btn btn-primary", id: "get_a_girl" %>
-<div id="refreshing_part"><h1>Latina Slut</h1></div>
-
-<script type="text/javascript">
-  $(function(){
-    $('#get_a_girl').click(function(e){
-      e.preventDefault();
-
-      var data = {}
-      var request = $.ajax({
-          url: '/get_a_girl',
-          dataType: 'html',
-          data: data,
-          method: "POST"
-      })
-
-      request.done(function(data) {
-          console.log(data);
-          $('#refreshing_part').html(data)
-      }).fail(function(xhr, status, err) {
-          console.log("failed");
-      })
-    });
-  });
-</script>
+<%= link_to "第一種方式", first_way_path, class: "btn btn-primary" %>
+<%= link_to "第二種方式", second_way_path, class: "btn btn-primary" %>

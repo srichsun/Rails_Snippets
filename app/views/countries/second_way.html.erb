@@ -1,0 +1,12 @@
+<%= link_to "Get a boy by normal get, get html respond", get_a_boy_path, class: "btn btn-primary"  %>
+
+
+<%= link_to "Get a boy by UJS, to do get_a_boy.js.erb", get_a_boy_path, method: 'post', class: "btn btn-primary", remote: true  %> <br> <br>
+<div id="refreshing_boy"><h1>Taiwan boy</h1></div>
+<!-- 加remote:true就可以：點連結，吃get_a_boy.js.erb， -->
+<!--
+remote: true 做的事：
+就是綁定click，
+prevent default，
+對連結打ajax，收script
+-->
