@@ -6,9 +6,11 @@
 
 <script>
   $(function(){
+    // 1 綁定按鈕
     $('#get_a_baby').click(function(e){
       e.preventDefault();
 
+      // 2 點擊打AJAX拿JSON資料
       var url = $(this).attr('href');
       var request = $.ajax({
                             url: url,
@@ -19,7 +21,11 @@
 
       request.done(function(data){
         console.log(data);
+
+        // 3 組HTML
         var html = "<h1>" + data.name + "</h1>";
+
+        // 4 更換頁面
         $('#baby_area').html(html);
       }).fail(function(data){
         console.log("fail");
