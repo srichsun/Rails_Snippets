@@ -11,4 +11,13 @@ class CountriesController < ApplicationController
       format.js
     end
   end
+
+  def get_a_baby
+    @baby = {name: 'Kara', color: 'white'}
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @baby }
+    end
+  end
 end

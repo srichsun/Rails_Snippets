@@ -1,0 +1,29 @@
+<%= link_to "用json方式回傳資料", get_a_baby_path, class: "btn btn-primary", id: "get_a_baby" %>
+
+<div id="baby_area">
+  <h1>Lana</h1>
+</div>
+
+<script>
+  $(function(){
+    $('#get_a_baby').click(function(e){
+      e.preventDefault();
+
+      var url = $(this).attr('href');
+      var request = $.ajax({
+                            url: url,
+                            dataType: "json",
+                            data: {},
+                            method: 'POST'
+                          });
+
+      request.done(function(data){
+        console.log(data);
+        var html = "<h1>" + data.name + "</h1>";
+        $('#baby_area').html(html);
+      }).fail(function(data){
+        console.log("fail");
+      })
+    });
+  })
+</script>
